@@ -35,9 +35,9 @@ if [ ! -d /var/vmail/backup ] && [ ! -d /var/vmail/vmail1/${DOMAIN} ]; then
     sed -i "s/Username:[ \t]*vmailadmin,[ \t]*Password:[ \t]*.*/Username: vmailadmin, Password:\"${VMAIL_DB_ADMIN_PASSWD}\"/" ${FILES}
     sed -i "/Database user:[ \t]*amavisd/{n;s/Database password:[ \t]*.*/Database password: \"${AMAVISD_DB_PASSWD}\"/}" ${FILES}
     sed -i "/Username:[ \t]*iredapd/{n;s/Password:[ \t]*.*/Password: \"${IREDAPD_DB_PASSWD}\"/}" ${FILES}
-    sed -i "/URL:[ \t]*https:.*\/iredadmin\//{n;n;s/Password:[ \t]*.*/Password: \"${POSTMASTER_PASSWORD}\"/}" ${FILES}
+    sed -i "/URL:[ \t]*http:.*\/iredadmin\//{n;n;s/Password:[ \t]*.*/Password: \"${POSTMASTER_PASSWORD}\"/}" ${FILES}
     sed -i "/Username:[ \t]iredadmin/{n;s/Password:[ \t]*.*/Password: \"${IREDADMIN_DB_PASSWD}\"/}" ${FILES}
-    sed -i "/URL:[ \t]*https:.*\/mail\//{n;n;s/Password:[ \t]*.*/Password: \"${POSTMASTER_PASSWORD}\"/}" ${FILES}
+    sed -i "/URL:[ \t]*http:.*\/mail\//{n;n;s/Password:[ \t]*.*/Password: \"${POSTMASTER_PASSWORD}\"/}" ${FILES}
     sed -i "/Username:[ \t]roundcube/{n;s/Password:[ \t]*.*/Password: \"${RCM_DB_PASSWD}\"/}" ${FILES}
     sed -i "/Database user:[ \t]*sogo/{n;s/Database password:[ \t]*.*/Database password: \"${SOGO_DB_PASSWD}\"/}" ${FILES}
     sed -i "/username:[ \t]*sogo_sieve_master@not-exist\.com/{n;s/password:[ \t]*.*/password: \"${SOGO_SIEVE_MASTER_PASSWD}\"/}" ${FILES}

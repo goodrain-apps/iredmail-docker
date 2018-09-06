@@ -116,4 +116,4 @@ EXPOSE 80 443 25 587 110 143 993 995
 
 # Default values changable at startup
 ENV SOGO_WORKERS=2
-ENV TZ=Etc/UTC
+ENV TZ=Asia/Shanghai
