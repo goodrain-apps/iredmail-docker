@@ -29,6 +29,11 @@ RUN echo "APT::Install-Recommends 0;" >> /etc/apt/apt.conf.d/01-no-recommends \
     && apt-get autoremove -y -q \
     && apt-get clean -y -q
 
+ADD hostname /usr/bin/hostname
+
+RUN chmod +x /usr/bin/hostname
+
+
 # Install of iRedMail from sources
 WORKDIR /opt/iredmail
 RUN wget -O - https://bitbucket.org/zhb/iredmail/downloads/iRedMail-"${IREDMAIL_VERSION}".tar.bz2 | \
