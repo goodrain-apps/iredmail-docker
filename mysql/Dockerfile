@@ -36,7 +36,7 @@ RUN chmod +x /usr/bin/hostname
 
 # Install of iRedMail from sources
 WORKDIR /opt/iredmail
-RUN wget -O - https://pkg.rainbond.com/pkg/mail/iRedMail-"${IREDMAIL_VERSION}".tar.bz2 | \
+RUN wget -O - https://pkg.rainbond.com/pkg/mail/new/yum/misc/iRedMail-"${IREDMAIL_VERSION}".tar.bz2 | \
     tar xvj --strip-components=1
 
 # Generate configuration file
