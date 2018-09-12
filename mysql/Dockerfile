@@ -60,7 +60,7 @@ RUN sed s/$(hostname_)/$(cat /opt/hostname | xargs echo -n).$(cat /etc/mailname 
        AUTO_CLEANUP_RESTART_IPTABLES=n \
        AUTO_CLEANUP_REPLACE_MYSQL_CONFIG=y \
        AUTO_CLEANUP_RESTART_POSTFIX=n \
-       bash iRedMail.sh \
+       bash -x iRedMail.sh \
     && apt-get autoremove -y -q \
     && apt-get clean -y -q
 
