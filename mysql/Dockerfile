@@ -2,7 +2,7 @@ FROM phusion/baseimage:latest
 MAINTAINER Miloš Kozák <milos.kozak@lejmr.com>
 
 # Suporting software versions
-ARG IREDMAIL_VERSION=0.9.8
+ARG IREDMAIL_VERSION=
 
 # Default values changable at startup
 ARG DOMAIN=DOMAIN
@@ -36,7 +36,7 @@ RUN chmod +x /usr/bin/hostname
 
 # Install of iRedMail from sources
 WORKDIR /opt/iredmail
-RUN wget -O - https://pkg.rainbond.com/pkg/mail/new/yum/misc/iRedMail-"${IREDMAIL_VERSION}".tar.bz2 | \
+RUN wget -O - https://pkg.rainbond.com/offline/yum/misc/iRedMail-0.9.8.tar.bz2 | \
     tar xvj --strip-components=1
 
 # Generate configuration file
